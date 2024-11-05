@@ -1,0 +1,53 @@
+================= vim 指令 ======================
+Ctl + v		可變為多行狀態
+i || shift + i 	可變為編輯狀態
+上面兩個一起使用可變為多行編輯
+
+Ctl + v 再指令狀態下按下y可複製,再暗p可貼上
+u 	恢復上一動
+Ctl + r 恢復下一動
+
+Esc 		變更為指令狀態
+dd 		指令狀態下刪除一行
+:<num>		指令狀態下,移動至num
+:set number 	顯示行數 
+
+================= git 指令 ======================
+git config --global user.email "user@email.com"		設定使用者資訊
+git config --global user.name "user name"		設定使用者資訊
+git config --global alias.st status 			設定簡寫
+git config --global core.editor vim 			設定commit編輯器
+
+git add . || git add <path> 	新增file 至git index 
+git commit || git commit -m "" 	新增git commit
+git commit --amend 		修改當前commit, 修改前的commit還是會存在
+git status || git st 		查看git目前狀態
+
+git reset HEAD 			回覆到原本commit狀態
+git rm --cached <file>		從track狀變成untrack狀態
+
+git branch <branch name>	創建新分支
+git branch <branch name> <commit>	在某個commit創建新分支
+git branch -m <old branch name> <new branch name>	更改分支名稱
+
+git check <branch name>		切換至分支
+git merge --no-ff <branch name>		與目前分支融合
+
+git rebase -i <commit>		修改歷史commit
+git rebase --continue		修改完歷史commit後必須執行, 執行後會將HEAD -> master
+				沒執行則是會有暫存分支。
+git rebase <branch name>	將此branch基底移植到另一個commit, 須先ck到要移植的branch
+
+git reflog 			歷史git改動
+
+git tag 			顯示所有tag
+git tag -a <tag version>	新增tag版本
+
+git remote add <remote name> <url>	新增remote
+git push <remote name>		上傳遠端
+git pull <remote name>		遠端抓取最新內容並rebase到master
+git fetch <remote name>	--prune		從遠端抓取最新內容
+git merge remotes/origim/main		將本端變動跟新至remote
+
+git push <remote name> <local branch>:<remote branch>	將指定本地端branch上傳/更新至雲端
+
