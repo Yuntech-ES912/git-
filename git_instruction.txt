@@ -17,7 +17,7 @@ git config --global user.email "user@email.com"		設定使用者資訊
 git config --global user.name "user name"		設定使用者資訊
 git config --global alias.st status 			設定簡寫
 git config --global core.editor vim 			設定commit編輯器
-
+git config --global merge.tool vimdiff
 git add . || git add <path> 	新增file 至git index 
 git commit || git commit -m "" 	新增git commit
 git commit --amend 		修改當前commit, 修改前的commit還是會存在
